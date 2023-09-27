@@ -109,6 +109,9 @@ typedef void(^UpdateValueBlock)(CBCharacteristic *characteristic,NSError *error)
 ///   - sn: Class EAPeripheralModel.SN
 - (void)connectPeripheralName:(NSString *)peripheralName sn:(NSString *)sn;
 
+/// 【EA & SC】connect watch
+- (void)connectToPeripheral:(EAPeripheralModel *)peripheralModel;
+
 
 /// 【EA & SC】Disconnect the watch. Restart the App, EASDK will not automatically connect to the watch.
 - (void)disconnectAndNotReConnectPeripheral;
@@ -127,9 +130,6 @@ typedef void(^UpdateValueBlock)(CBCharacteristic *characteristic,NSError *error)
 
 
 
-/// connect watch
-/// 连接设备
-- (void)connectToPeripheral:(EAPeripheralModel *)peripheralModel;
 
 /// reconnection
 /// 重连设备

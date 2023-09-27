@@ -60,7 +60,7 @@ NSString *logString = [NSString stringWithFormat:@""format,##__VA_ARGS__];\
 @property (nonatomic, assign) BOOL canScanAllDevices;
 
 
-@property (nonatomic, assign) BOOL openEATWatch;
+@property (nonatomic, assign) BOOL openSCWatch;
 
 
 /// SC_SDK

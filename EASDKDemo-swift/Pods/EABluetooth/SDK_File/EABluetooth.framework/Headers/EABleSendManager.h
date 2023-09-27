@@ -11,11 +11,11 @@
 #import <EABluetooth/EAEnum.h>
 #import <EABluetooth/EABleConfig.h>
 #import <UIKit/UIKit.h>
+#import <EABluetooth/OPQCommon.h>
 NS_ASSUME_NONNULL_BEGIN
 
 
-typedef void(^ResultGetInfoBlock)(EABaseModel *baseModel);
-typedef void(^RespondBlock)(EARespondModel *respondModel);
+
 
 
 @interface EABleSendManager : NSObject

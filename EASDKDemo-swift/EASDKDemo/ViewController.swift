@@ -247,52 +247,60 @@ class ViewController: UIViewController, EABleManagerDelegate, UITableViewDataSou
         
         
         EABleSendManager.default().operationGetInfo(with: EADataInfoType.watch) { baseModel in
-    
-            // Determine whether the watch is bound: unbound -> execute the binding process
-            if (baseModel as! EAWatchModel).userId != userId {
-
-                // Determine whether the watch supports the user to determine the binding function:
-                // Support -> Set < bindWatch.ops = .normalBegin > Let the watch display the binding page
-                if ((baseModel as! EAWatchModel).isWaitForBinding == 1) {
+            
+            if (baseModel.isKind(of: EAWatchModel.self)) {
+                
+                // Determine whether the watch is bound: unbound -> execute the binding process
+                if (baseModel as! EAWatchModel).userId != userId {
                     
-                    let bindWatch = EABingingOps()
-                    bindWatch.ops = .normalBegin // To start the binding, the user needs to click on the watch to confirm it
-                    EABleSendManager.default().operationChange(bindWatch) { respondModel in
+                    // Determine whether the watch supports the user to determine the binding function:
+                    // Support -> Set < bindWatch.ops = .normalBegin > Let the watch display the binding page
+                    if ((baseModel as! EAWatchModel).isWaitForBinding == 1) {
                         
-                        // Determine whether the user clicks the binding:
-                        // YES: < Set bindWatch.ops = .end > binding completed
-                        if ( respondModel.eErrorCode == .success) {
+                        let bindWatch = EABingingOps()
+                        bindWatch.ops = .normalBegin // To start the binding, the user needs to click on the watch to confirm it
+                        EABleSendManager.default().operationChange(bindWatch) { respondModel in
                             
-                            let bindWatch = EABingingOps()
-                            bindWatch.ops = .end //  Set EABindingOpsType. End to complete the binding
-                            bindWatch.userId = userId
-                            EABleSendManager.default().operationChange(bindWatch) { respondModel in
+                            // Determine whether the user clicks the binding:
+                            // YES: < Set bindWatch.ops = .end > binding completed
+                            if ( respondModel.eErrorCode == .success) {
                                 
-                                // Interactive data with the watch
-                                self.loadWatchData();
+                                let bindWatch = EABingingOps()
+                                bindWatch.ops = .end //  Set EABindingOpsType. End to complete the binding
+                                bindWatch.userId = userId
+                                EABleSendManager.default().operationChange(bindWatch) { respondModel in
+                                    
+                                    // Interactive data with the watch
+                                    self.loadWatchData();
+                                }
+                            }
+                            else
+                            {
+                                //NO: Refuse, disconnect from the watch
+                                EABleManager.default().cancelConnectingPeripheral();
                             }
                         }
-                        else
-                        {
-                            //NO: Refuse, disconnect from the watch
-                            EABleManager.default().cancelConnectingPeripheral();
+                    }
+                    else
+                    {
+                        //Not supported -> < Set bindWatch.ops = .end > binding completed
+                        let bindWatch = EABingingOps()
+                        bindWatch.ops = .end //  Set EABindingOpsType. End to complete the binding
+                        EABleSendManager.default().operationChange(bindWatch) { respondModel in
+                            
+                            // Interactive data with the watch
+                            self.loadWatchData();
                         }
                     }
                 }
-                else
-                {
-                    //Not supported -> < Set bindWatch.ops = .end > binding completed
-                    let bindWatch = EABingingOps()
-                    bindWatch.ops = .end //  Set EABindingOpsType. End to complete the binding
-                    EABleSendManager.default().operationChange(bindWatch) { respondModel in
-                        
-                        // Interactive data with the watch
-                        self.loadWatchData();
-                    }
+                else {
+                    
+                    // Bound,interactive data with the watch
+                    self.loadWatchData();
                 }
-            }else {
-                
-                // Bound,interactive data with the watch
+            }
+            else
+            {
                 self.loadWatchData();
             }
         }

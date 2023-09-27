@@ -8,12 +8,9 @@ target 'EASDKDemo' do
 # pod 'QMUIKit'
   pod 'SnapKit'
   
-  pod 'Protobuf'
-  pod 'YYKit'
-  pod 'SAMKeychain'
-  pod 'BGFMDB'
 
-  pod 'EABluetooth', :git =>  'https://github.com/EastApex/EA_TiTan_SDK.git'
+# pod 'EABluetooth', :git =>  'https://github.com/EastApex/EA_TiTan_SDK.git'
+  pod 'EABluetooth', :path => '../'
 
  # if Xcode version is 14.3 will open this
 

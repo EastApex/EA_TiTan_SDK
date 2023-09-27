@@ -35,8 +35,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         config.isTest = 0;// Test special (please set use in the debugging stage => 0: delete big data, 1: do not delete big data)
         
         
-        config.
+        let deviceHeadNames:NSArray = [
+            "FT_38",
+            "Smart A12",
+        ]
         
+        //  open sc watch
+        config.openSCWatch = true;
+        config.deviceHeadNames = deviceHeadNames as! [Any];
         let bleManager = EABleManager.default()
         bleManager.bleConfig = config;
         

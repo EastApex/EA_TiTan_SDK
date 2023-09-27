@@ -24,12 +24,8 @@ PODS:
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
-  - BGFMDB
-  - EABluetooth (from `https://github.com/EastApex/EA_TiTan_SDK.git`)
-  - Protobuf
-  - SAMKeychain
+  - EABluetooth (from `../`)
   - SnapKit
-  - YYKit
 
 SPEC REPOS:
   trunk:
@@ -43,12 +39,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   EABluetooth:
-    :git: https://github.com/EastApex/EA_TiTan_SDK.git
-
-CHECKOUT OPTIONS:
-  EABluetooth:
-    :commit: 2d5ce25c0fafa4553fdadc71cd22194a00e6725f
-    :git: https://github.com/EastApex/EA_TiTan_SDK.git
+    :path: "../"
 
 SPEC CHECKSUMS:
   BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
@@ -60,6 +51,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 1ea5ed16e44022b9441877e1517de72e8a2d5156
+PODFILE CHECKSUM: 478b473dbdb862138767a85d2364abf512352e17
 
 COCOAPODS: 1.11.3
