@@ -38,8 +38,6 @@ NSString *logString = [NSString stringWithFormat:@""format,##__VA_ARGS__];\
 /// 搜索手表的蓝牙名称
 @property (nonatomic, copy) NSArray *deviceHeadNames;
 
-/// 检索通道设备：默认8800
-@property (nonatomic, assign) NSInteger scanchannel __attribute__((deprecated));
 
 /// 测试专用（请在调试阶段设置使用=》0:删除大数据，1:不删除大数据）
 /// Test special (please set use in the debugging stage => 0: delete big data, 1: do not delete big data)
@@ -58,18 +56,22 @@ NSString *logString = [NSString stringWithFormat:@""format,##__VA_ARGS__];\
 /// Enable command timeout response.  Defalut NO,
 @property (nonatomic, assign) BOOL openCmdTimeOut;
 
-/// ignore：
-/// 工具 ，默认关闭
-@property (nonatomic, assign) BOOL tool;
-
-/// ignore：
-/// 工厂
-@property (nonatomic, assign) BOOL factory;
-
-/// ignore：
 /// 扫描所有设备 ，默认关闭
 @property (nonatomic, assign) BOOL canScanAllDevices;
 
+
+@property (nonatomic, assign) BOOL openEATWatch;
+
+
+/// SC_SDK
+@property(nonatomic,assign) BOOL isSCWatch;
+
+/// ignore：
+@property (nonatomic, assign) NSInteger scanchannel __attribute__((deprecated));
+/// ignore：
+@property (nonatomic, assign) BOOL tool;
+/// ignore：
+@property (nonatomic, assign) BOOL factory;
 
 
 /// 初始化默认配置,不是单例（debug:NO,scanchannel:8800,canScanAllDevices:NO,isTest:NO,saveLog:NO）

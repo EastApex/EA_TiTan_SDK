@@ -5,11 +5,17 @@ PODS:
   - BGFMDB/BG (2.0.13):
     - BGFMDB/FMDB
   - BGFMDB/FMDB (2.0.13)
-  - EABluetooth (1.0.80.2):
+  - CocoaLumberjack (3.8.0):
+    - CocoaLumberjack/Core (= 3.8.0)
+  - CocoaLumberjack/Core (3.8.0)
+  - EABluetooth (1.0.1):
     - BGFMDB
+    - LYLogger
     - Protobuf
     - SAMKeychain
     - YYKit
+  - LYLogger (0.1.0):
+    - CocoaLumberjack
   - Protobuf (3.21.11)
   - SAMKeychain (1.5.3)
   - SnapKit (5.6.0)
@@ -19,7 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - BGFMDB
-  - EABluetooth (from `../`)
+  - EABluetooth (from `https://github.com/EastApex/EA_TiTan_SDK.git`)
   - Protobuf
   - SAMKeychain
   - SnapKit
@@ -28,6 +34,8 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - BGFMDB
+    - CocoaLumberjack
+    - LYLogger
     - Protobuf
     - SAMKeychain
     - SnapKit
@@ -35,16 +43,23 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   EABluetooth:
-    :path: "../"
+    :git: https://github.com/EastApex/EA_TiTan_SDK.git
+
+CHECKOUT OPTIONS:
+  EABluetooth:
+    :commit: 2d5ce25c0fafa4553fdadc71cd22194a00e6725f
+    :git: https://github.com/EastApex/EA_TiTan_SDK.git
 
 SPEC CHECKSUMS:
   BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
-  EABluetooth: bafa2491f6781d4866d577cf5dca99bfdef25083
+  CocoaLumberjack: 78abfb691154e2a9df8ded4350d504ee19d90732
+  EABluetooth: 8be493f056aa963e6c06013a4a5200ab1e9a88ec
+  LYLogger: c58e9b56757fa00aac33b2a9cc207abffc99a693
   Protobuf: 3acb308a1e208605afd50866b98ec220141bcb8c
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 17679a44c34a61ee18d139cfa239883f3f7ecbf5
+PODFILE CHECKSUM: 1ea5ed16e44022b9441877e1517de72e8a2d5156
 
 COCOAPODS: 1.11.3

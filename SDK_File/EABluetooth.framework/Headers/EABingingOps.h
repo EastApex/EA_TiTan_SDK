@@ -26,6 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) NSInteger bindMod;
 
 
+/// sc watch support 
+@property(nonatomic,assign) BOOL clearData;
+
 
 @end
 

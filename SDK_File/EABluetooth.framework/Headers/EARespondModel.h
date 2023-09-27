@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** 提醒id: 在write request的ops为新增 编辑回应中赋值，其他情况为0 */
 @property(nonatomic, assign) NSInteger id_p;
 
+@property(nonatomic,strong) NSString *errorText;
+
 
 + (instancetype)eaInitSuccWithRequestId:(EADataInfoType)requestId;
 + (instancetype)eaInitErrorWithRequestId:(EADataInfoType)requestId;
@@ -35,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)eaInitTimeOutWithRequestId:(EADataInfoType)requestId;
 
+
++ (instancetype)eaInitSCNotCommondWithRequestId:(EADataInfoType)requestId;
 @end
 
 NS_ASSUME_NONNULL_END

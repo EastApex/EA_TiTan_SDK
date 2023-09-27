@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EABaseModel : NSObject<NSCopying>
 
+/// <#name#>
+@property(nonatomic,strong) NSString *value;
+
+
 
 /// MARK: - 通用转换方法
 /// @param data 数据流

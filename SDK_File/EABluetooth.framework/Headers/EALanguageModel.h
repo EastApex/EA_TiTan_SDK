@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, assign) EALanguageType languageName;
 
++ (instancetype)eaInitWithLanguageType:(EALanguageType )language;
 @end
 
 

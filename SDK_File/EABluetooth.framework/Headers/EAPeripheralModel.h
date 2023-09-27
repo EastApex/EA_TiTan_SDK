@@ -17,12 +17,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) NSNumber *RSSI;
 /// Broadcast packet
 @property(nonatomic,strong) NSDictionary *advertisementData;
-/// sn号 或者 mac地址
+/// sn or mac address
 @property(nonatomic,strong) NSString *SN;
 @property(nonatomic,strong) NSString *clientCode;
 
 /// Bluetooth watch name
 @property(nonatomic,strong) NSString *localName;
+
+/// SC_SDK
+@property(nonatomic,assign) BOOL isSCWatch;
 
 /// ignore
 @property(nonatomic,strong) NSString *kehuhao;

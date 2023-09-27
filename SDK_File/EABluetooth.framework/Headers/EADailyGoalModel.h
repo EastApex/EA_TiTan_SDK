@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EADailyGoalItem : EABaseModel
 
 /// on-off :0 off 1 on
-/// 开关： 0关闭 1打开
+/// SC Watch no support this
 @property(nonatomic, assign) NSInteger sw;
 
 /// goal

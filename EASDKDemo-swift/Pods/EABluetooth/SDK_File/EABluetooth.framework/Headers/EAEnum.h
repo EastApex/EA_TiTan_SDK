@@ -297,10 +297,29 @@ typedef NS_ENUM(NSUInteger, EADataInfoType) {
     /// EASos
     EADataInfoTypeSos = 58,
     
+    /// id = 59
+    /// Classic Bluetooth BT Control
+    /// EAOpsBt
+    EADataInfoTypeOpsBt = 59,
+    
+    /// id = 60
+    /// User-defined reply messages
+    /// EAReplayUserMessage、EAReplayUserMessageData
+    EADataInfoTypeReplayUserMessage = 60,
+    
+    
+    /// id = 61
+    /// Watch Log
+    /// EAWatchLog
+    EADataInfoTypeWatchLog = 61,
+    
     /// Operating Phone Commands
     /// 操作手机命令
     /// EAPhoneOpsModel
     EADataInfoTypePhoneOps = 2001,
+    
+    /// Reply messages
+    EADataInfoTypeReplayMessage = 2005,
     
     /// MTU
     EADataInfoTypeMTU = 2006,
@@ -448,6 +467,18 @@ typedef NS_ENUM(NSUInteger, EARespondCodeType) {
     /// App launch campaign response status (id=47) :APP campaign has ended.
     EARespondCodeTypeWatchEndMotion = 3,
     
+    
+    /// 经典蓝牙BT控制失败原因(id=59): 设备进入了勿扰模式
+    /// Classic Bluetooth BT Control Failure Reason (id=59): Device is in Do Not Disturb Mode
+    EARespondCodeTypeBtOnFailNotDisturb = 4,
+
+    /// 经典蓝牙BT控制失败原因(id=59): 设备低电量
+    /// Classic Bluetooth BT Control Failure Reason (id=59):Low Battery
+    EARespondCodeTypeBtOnFailLowPower = 5,
+
+    /// 经典蓝牙BT控制失败原因(id=59): 设备正在充电
+    /// Classic Bluetooth BT Control Failure Reason (id=59):Charging.
+    EARespondCodeTypeBtOnFailCharging = 6,
     
     /// The maximum number supported is exceeded
     /// 超过支持的最大数量
@@ -720,6 +751,10 @@ typedef NS_ENUM(NSUInteger,EALanguageType) {
     ///匈牙利语
     ///Hungarian
     EALanguageTypeHungarian = 26,
+    
+    /// 印地语
+    /// Hindi
+    EALanguageTypeHindi = 27,
 };
 
 
@@ -793,6 +828,14 @@ typedef NS_ENUM(NSUInteger,EADeviceOpsType) {
     /// Enable Watch operation The pairing box is displayed on the IOS phone
     /// 使能手表操作IOS手机弹出配对框
     EADeviceOpsTypeShowiPhonePairingAlert = 13,
+    
+    /// 关闭bt信息回复功能
+    /// Disable the bt message reply function
+    EADeviceOpsTypeBtMsgOff = 14,
+
+    /// 打开bt信息回复功能
+    /// open the bt message reply function
+    EADeviceOpsTypeBtMsgOn = 15,
 };
 
 
@@ -1209,33 +1252,48 @@ typedef NS_ENUM(NSUInteger,EAPhoneOps) {
     EAPhoneOpsStopSearchWatch = 11,
     
     /// 手表发起暂停app运动
+    /// Watch launches pause app campaign
     EAPhoneOpsAppSportPause = 13,
 
     /// 手表发起继续app运动
+    /// Watch launches continue app campaign
     EAPhoneOpsAppSportContinue = 14,
 
     /// 手表发起结束app运动
+    /// Watch launches end app campaign
     EAPhoneOpsAppSportEnd = 15,
     
-    ///  接听来电(android) */
+    ///  接听来电(android)
     EAPhoneOpsIncomingCallAccept = 16,
 
-    ///  拒接来电(android) */
+    ///  拒接来电(android)
     EAPhoneOpsIncomingCallReject = 17,
 
-    ///  勿扰打开 */
+    ///  Do not disturb open
     EAPhoneOpsNotDisturbOpen = 18,
 
-    ///  勿扰关闭 */
+    ///  Do not disturb close
     EAPhoneOpsNotDisturbClose = 19,
 
-    ///  抬手亮屏打开 */
+    ///  抬手亮屏打开
+    ///  Lift your hand to light up the screen and turn it on
     EAPhoneOpsGesturesOpen = 20,
 
-    ///  抬手亮屏关闭 */
+    ///  抬手亮屏关闭
+    ///  Lift your hand to light up the screen and turn it off
     EAPhoneOpsGesturesClose = 21,
     
+    /// 经典蓝牙BT打开
+    /// Classic Bluetooth BT Open
+    EAPhoneOpsBtOn = 22,
+
+    ///  经典蓝牙BT关闭
+    ///  Classic Bluetooth BT Close
+    EAPhoneOpsBtOff = 23,
     
+    /// 经典蓝牙BT打开(已连接)
+    /// Classic Bluetooth BT connected
+    EAPhoneOpsBtConnected = 24,
 };
 
 /// Operating mobile phone status
@@ -3074,6 +3132,8 @@ typedef NS_ENUM(NSUInteger, EATimeType) {
     
     EATimeTypeDate              = 1000,      // 101:Date【几号】
     EATimeTypeWeek              = 1001,      // 101:Week【星期几】
+    
+    EATimeTypeAmPmNull          = 1100,      // 1100:
 };
 
 typedef NS_ENUM(NSUInteger, EAPointerType) {
@@ -3139,6 +3199,16 @@ typedef NS_ENUM(NSUInteger,EABleState) {
     EABleStateUnauthorized,
     EABleStatePoweredOff,
     EABleStatePoweredOn,
+};
+
+
+/// BT
+/// MARK: - BT
+typedef NS_ENUM(NSUInteger,EABtType) {
+    
+    EABtTypeOff = 0,
+    EABtTypeOn = 1,
+    EABtTypeConnected = 2,
 };
 
 #endif /* EAEnumh */

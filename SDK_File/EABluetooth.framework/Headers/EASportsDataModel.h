@@ -134,6 +134,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 次数【跳绳】
 @property(nonatomic, assign) NSInteger count;
 
+/// sc watch support
+@property(nonatomic, assign) NSInteger id_p;
+
 
 @end
 

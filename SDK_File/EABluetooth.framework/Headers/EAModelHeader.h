@@ -108,4 +108,9 @@
 #import <EABluetooth/EACustomNumberWatchFaceModel.h>
 
 
+// OPQ
+#import <EABluetooth/OPQCommon.h>
+#import <EABluetooth/EASCModel.h>
+
+
 #endif /* EAModelHeader_h */

@@ -25,110 +25,12 @@
 #import "EAPeripheralModel.h"
 #import "EABleConfig.h"
 #import <EABluetooth/EAEnum.h>
+#import <EABluetooth/OPQCommon.h>
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
 
-/// Connect status
-/// MARK: -  绑定类型
-typedef NS_ENUM(NSUInteger, EAConnectStatus) {
-    
-    /// Connect failed
-    /// 连接失败
-    EAConnectStatusFailed = 0,
-    
-    /// Connect succeed
-    /// 连接成功
-    EAConnectStatusSucceed = 1,
-    
-    /// Disconnect
-    /// 断开连接
-    EAConnectStatusDisconnect = 2,
-    
-    /// Bluetooth on
-    /// 蓝牙开启
-    EABlePoweredOn = 3,
-    
-    /// Bluetooth off
-    /// 蓝牙关闭
-    EABlePoweredOff = 4,
-    
-    /// Connect failed and need removed pairing
-    /// 连接失败,需要忽略设备
-    EAConnectStatusFailedWithRemovedPairing = 5,
-    
-    /// Connect failed time out
-    /// 连接失败,超时
-    EAConnectStatusFailedWithTimeOut = 6,
-    
-};
 
-/// Notification Name:Connect failed
-/// 连接失败
-#define kNTF_EAConnectStatusFailed              @"EAConnectStatusFailed"
-
-/// Notification Name:Connect succeed
-/// 连接成功（已获取服务）
-#define kNTF_EAConnectStatusSucceed             @"EAConnectStatusSucceed"
-
-/// Notification Name: Disconnect
-/// 断开连接
-#define kNTF_EAConnectStatusDisconnect          @"EAConnectStatusDisconnect"
-
-/// Notification Name:Connection attempt succeeded (service not obtained)
-/// 尝试连接成功（未获取服务）
-#define kNTF_EAConnectStatusSucceedUnGetServer  @"EAConnectStatusSucceedUnGetServer"
-
-/// Connecting
-/// 连接中
-#define kNTF_EAConnectStatusConnecting          @"EAConnectStatusConnecting"
-
-/// ANCS
-#define kNTF_EAEADidUpdateANCSAuthorization     @"EADidUpdateANCSAuthorization"
-
-/// Notification Name: Bluetooth on
-/// 蓝牙开启
-#define kNTF_EABlePoweredOn                 @"EABlePoweredOn"
-/// Notification Name: Bluetooth off
-/// 蓝牙关闭
-#define kNTF_EABlePoweredOff                @"EABlePoweredOff"
-
-/// Notification Name: Receive a mobile phone message from the watch
-/// 收到手表发送的操作手机消息
-#define kNTF_EAGetDeviceOpsPhoneMessage     @"EAGetDeviceOpsPhoneMessage"
-
-/// Notification Name: OTA data transmission is complete
-/// OTA数据传输完成
-#define kNTF_EAOTAAGPSDataFinish            @"EAOTADataFinish"
-
-/// Notification Name: OTA progress
-/// OTA进度
-#define kNTF_EAOTAAGPSDataing               @"EAOTADataing"
-
-
-/// Notification Name: OTA progress fail
-/// OTA失败
-#define kNTF_EAOTAFail                      @"EAOTAFail"
-
-
-
-
-/// 实时数据
-/// Real time data
-#define kNTF_EARealTimeData                 @"EARealTimeData"
-
-/// App运动实时数据
-/// App sport real time data
-#define kNTF_EAAppSportRealTime             @"EAAppSportRealTime"
-
-/// 上报启动手表测量结果【id = 48 测量结果）】
-/// Report the measurement result of starting the watch [id = 48 measurement result]
-#define kNTF_EAAppOpsData                   @"EAAppOpsData"
-
-
-/// 回复信息
-/// ReplayMessage
-#define kNTF_EAReplayMessage                @"EAReplayMessage"
 
 
 
@@ -195,16 +97,35 @@ typedef void(^UpdateValueBlock)(CBCharacteristic *characteristic,NSError *error)
 /// 单例
 + (instancetype)defaultManager;
 
+/// 【EA & SC】scan watch
+- (void)scanPeripherals;
+
+/// 【EA & SC】stop scan watch
+- (void)stopScanPeripherals;
+
+/// 【EA & SC】watch connect func
+/// - Parameters:
+///   - peripheralName: peripheral name
+///   - sn: Class EAPeripheralModel.SN
+- (void)connectPeripheralName:(NSString *)peripheralName sn:(NSString *)sn;
+
+
+/// 【EA & SC】Disconnect the watch. Restart the App, EASDK will not automatically connect to the watch.
+- (void)disconnectAndNotReConnectPeripheral;
+
+/// 【EA & SC】Disconnect from the watch and reset and clear the watch data.
+- (void)unbindAndResetPeripheral;
+
+/// 【EA & SC】Check whether the watch is connected
+- (BOOL)isConnected;
+
+/// 【EA & SC】Check whether to enable Bluetooth
+- (BOOL)isBleOn;
+
 
 #pragma mark - Equipment related Methods 设备相关方法
 
-/// scan watch
-/// 扫描
-- (void)scanPeripherals;
 
-/// stop scan watch
-/// 停止扫描设备
-- (void)stopScanPeripherals;
 
 /// connect watch
 /// 连接设备
@@ -233,26 +154,9 @@ typedef void(^UpdateValueBlock)(CBCharacteristic *characteristic,NSError *error)
 
 /// Disconnect the watch. Restart the App, EASDK will not automatically connect to the watch.
 /// 断开手表连接。重启App，EASDK不会自动连接。
-- (void)disconnectAndNotReConnectPeripheral;
-
-/// Disconnect the watch. Restart the App, EASDK will not automatically connect to the watch.
-/// 断开手表连接。重启App，EASDK不会自动连接。
 - (void)unbindPeripheral DEPRECATED_MSG_ATTRIBUTE("Please use \"disconnectAndNotReConnectPeripheral\"");
 
 
-/// Disconnect from the watch and reset and clear the watch data.
-/// 断开与手表的连接，重置并清除手表数据。
-- (void)unbindAndResetPeripheral;
-
-
-
-/// Check whether to enable Bluetooth
-/// 是否开启蓝牙
-- (BOOL)isBleOn;
-
-/// Check whether the watch is connected
-/// 是否已连接设备
-- (BOOL)isConnected;
 
 /// Gets the connected watch
 /// 获取连接的设备信息

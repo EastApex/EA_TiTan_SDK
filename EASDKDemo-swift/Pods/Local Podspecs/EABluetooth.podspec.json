@@ -1,9 +1,9 @@
 {
   "name": "EABluetooth",
-  "version": "1.0.80.2",
+  "version": "1.0.1",
   "summary": "A short description of EABluetooth.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/EastApex/EASDKTool_iOS",
+  "homepage": "https://github.com/EastApex/EA_TiTan_SDK",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "Aye": "aye.zhang@qq.com"
   },
   "source": {
-    "git": "https://github.com/EastApex/EASDKTool_iOS.git",
-    "tag": "1.0.80.2"
+    "git": "https://github.com/EastApex/EA_TiTan_SDK.git",
+    "tag": "1.0.1"
   },
   "platforms": {
     "ios": "9.0"
@@ -30,6 +30,9 @@
 
     ],
     "SAMKeychain": [
+
+    ],
+    "LYLogger": [
 
     ]
   },

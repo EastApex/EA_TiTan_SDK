@@ -1,0 +1,6 @@
+framework module LYLogger {
+  umbrella header "LYLogger-umbrella.h"
+
+  export *
+  module * { export * }
+}

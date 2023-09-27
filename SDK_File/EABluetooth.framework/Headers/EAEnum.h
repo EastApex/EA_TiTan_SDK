@@ -401,11 +401,34 @@ typedef NS_ENUM(NSUInteger, EADataInfoType) {
     EADataInfoTypeSportHrData = 3013,
 
     
+    /// Temperature Data
+    EADataInfoTypeTemperatureData = 3699,
+    
+    
     /// OTA命令
     EADataInfoTypeOTARequest = 9001,
     
     /// OTA命令回应
     EADataInfoTypeOTARespond = 9000,
+    
+    
+    
+    // SC watch 
+    EADataInfoTypeSCMacAddress = 10000,
+    EADataInfoTypeSCSerialNumber = 10001,
+    EADataInfoTypeSCFWVersion = 10002,
+    EADataInfoTypeSCUnitFormat = 10003,
+    EADataInfoTypeSCHandWash = 10004,
+    EADataInfoTypeSCTemperatureMonitor = 10005,
+    EADataInfoTypeSCAgpsInfo = 10006,
+    EADataInfoTypeSCUserId = 10007,
+    EADataInfoTypeSCSwitches = 10008,
+    EADataInfoTypeSCHeartRateMonitor = 10009,
+    EADataInfoTypeSCSedentaryMonitor = 10010,
+    EADataInfoTypeSCHydrationAlert = 10011,
+    EADataInfoTypeSCNotificationSwitch = 10012,
+    EADataInfoTypeSCWatchFaceList = 10013,
+    EADataInfoTypeSCWatchFace = 10014,
 };
 
 /// MARK: -  通道类型类型
@@ -428,6 +451,39 @@ typedef NS_ENUM(NSUInteger, EACharacteristicType) {
     
 };
 
+/// Connect status
+/// MARK: -  绑定类型
+typedef NS_ENUM(NSUInteger, EAConnectStatus) {
+    
+    /// Connect failed
+    /// 连接失败
+    EAConnectStatusFailed = 0,
+    
+    /// Connect succeed
+    /// 连接成功
+    EAConnectStatusSucceed = 1,
+    
+    /// Disconnect
+    /// 断开连接
+    EAConnectStatusDisconnect = 2,
+    
+    /// Bluetooth on
+    /// 蓝牙开启
+    EABlePoweredOn = 3,
+    
+    /// Bluetooth off
+    /// 蓝牙关闭
+    EABlePoweredOff = 4,
+    
+    /// Connect failed and need removed pairing
+    /// 连接失败,需要忽略设备
+    EAConnectStatusFailedWithRemovedPairing = 5,
+    
+    /// Connect failed time out
+    /// 连接失败,超时
+    EAConnectStatusFailedWithTimeOut = 6,
+    
+};
 
 /// Watch connection status
 /// MARK: - 手表连接状态
@@ -479,6 +535,15 @@ typedef NS_ENUM(NSUInteger, EARespondCodeType) {
     /// 经典蓝牙BT控制失败原因(id=59): 设备正在充电
     /// Classic Bluetooth BT Control Failure Reason (id=59):Charging.
     EARespondCodeTypeBtOnFailCharging = 6,
+    
+    
+    
+    
+    ///  SC Watch not this commond
+    EARespondCodeTypeSCNotCommond = 800,
+    
+    
+    EARespondCodeTypeRemindIdError = 901,
     
     /// The maximum number supported is exceeded
     /// 超过支持的最大数量
@@ -836,6 +901,16 @@ typedef NS_ENUM(NSUInteger,EADeviceOpsType) {
     /// 打开bt信息回复功能
     /// open the bt message reply function
     EADeviceOpsTypeBtMsgOn = 15,
+    
+    
+    
+    
+    
+    
+    /// go the photo
+    /// sc watch support
+    EADeviceOpsTypeGoCamera = 1001,
+
 };
 
 
@@ -1084,31 +1159,47 @@ typedef NS_ENUM(NSUInteger,EAReminderEventType) {
     
     /// The alarm clock
     /// 闹钟
+    /// support sc watch
     EAReminderEventTypeAlarm = 0,
     
     /// Sleep 【Go to bed】
     /// 睡觉
+    /// support sc watch
     EAReminderEventTypeSleep = 1,
     
     /// Sport
     /// 运动
+    /// support sc watch
     EAReminderEventTypeSport = 2,
     
     /// Drink water
     /// 喝水
+    /// support sc watch
     EAReminderEventTypeDrink = 3,
     
     /// Take the medicine
     /// 吃药
+    /// support sc watch
     EAReminderEventTypeMedicine = 4,
     
     /// Meeting
     /// 会议
+    /// support sc watch
     EAReminderEventTypeMeeting = 5,
     
     /// User Customization
     /// 用户自定义
     EAReminderEventTypeUser = 6,
+    
+    /// support sc watch
+    EAReminderEventTypeEat = 100,
+
+    /// support sc watch
+    EAReminderEventTypeBills = 106,
+
+    /// support sc watch
+    EAReminderEventTypeWalkdog = 108,
+
 };
 
 

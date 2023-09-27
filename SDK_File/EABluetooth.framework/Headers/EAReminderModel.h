@@ -62,14 +62,18 @@ weekCycleBit 为127 即 开启每天监测功能
 
 /// Reminder Event Type
 /// 提醒事件类型
+///  SC Watch support
 @property(nonatomic, assign) EAReminderEventType reminderEventType;
 
 /// This parameter does not need to be set. If the parameter is modified, the ID needs to be set
 /// 新增不需要设置，修改需要设置id
+/// SC Watch support
 @property(nonatomic, assign) NSInteger id_p;
 
+/// SC Watch support
 @property(nonatomic, assign) NSInteger hour;
 
+/// SC Watch support
 @property(nonatomic, assign) NSInteger minute;
 //
 //@property(nonatomic, assign) NSInteger year;
@@ -81,9 +85,11 @@ weekCycleBit 为127 即 开启每天监测功能
 /** 周期：位对应从bit0~bit6对应周日~周六
     The same of EAAutoCheckSleepModel.weekCycleBit
  */
+/// SC Watch support
 @property(nonatomic, assign) NSInteger weekCycleBit;
 
 /// on-off: 0 off 1 on
+/// SC Watch support
 @property(nonatomic, assign) NSInteger sw;
 
 /// Secondary reminder on-off(Snooze on-off): 0 off 1 on
@@ -95,6 +101,7 @@ weekCycleBit 为127 即 开启每天监测功能
 @property(nonatomic, assign) EARemindActionType remindActionType;
 
 /// if reminderEventType==.User [EAReminderEventTypeUser] needs to be set
+/// SC Watch support
 @property(nonatomic, strong) NSString *content;
 
 
@@ -159,12 +166,15 @@ weekCycleBit 为127 即 开启每天监测功能
 
 /// Reminder event operations
 /// 提醒事件操作
+/// SC Watch support ==> add 、edit 、delete
 @property(nonatomic, assign) EAReminderEventOps eOps;
 
 /// This parameter does not need to be set. If the parameter is modified, the ID needs to be set
 /// 新增不需要设置，修改需要设置id
+/// SC Watch support
 @property(nonatomic, assign) NSInteger id_p;
 
+/// SC Watch support
 @property(nonatomic,strong) NSMutableArray<EAReminderModel*> *sIndexArray;
 
 /** 类型：当ops = replace_type时需要填入 */

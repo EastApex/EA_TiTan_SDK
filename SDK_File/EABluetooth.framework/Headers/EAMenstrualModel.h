@@ -6,6 +6,7 @@
 //
 
 #import <EABluetooth/EABluetooth.h>
+#import <EABluetooth/SCBluetoothSDK.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,6 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 生理周期数据（最多支持45个）
 @property(nonatomic, strong) NSMutableArray<EAMenstrualModel*> *sDateArray;
 
+// SC Watch support
+@property(nonatomic, strong, null_resettable) SCPT_Menstrual *scMenstrual;
+
 
 /// Obtain period data
 + (EAMenstruals *)eaAllocInitWithStartDate:(NSString *)start keepDay:(NSInteger)keepDay cycleDay:(NSInteger)cycleDay DEPRECATED_MSG_ATTRIBUTE("Please use \"eaAllocInitWithStartDate: keepDay: cycleDay: judgeCurrentTime:\"");
@@ -61,6 +65,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - showOvulationDay:
 ///   - judge: Whether to determine the current time to obtain the most recent menstrual data.【是否需要判断当前时间获取最近的经期数据】
 + (EAMenstruals *)eaAllocInitWithStartDate:(NSString *)start keepDay:(NSInteger)keepDay cycleDay:(NSInteger)cycleDay showOvulationDay:(BOOL)showOvulationDay judgeCurrentTime:(BOOL)judge;
+
+
+
 
 @end
 

@@ -278,6 +278,32 @@ NS_ASSUME_NONNULL_BEGIN
 /// 日程提醒: 是否支持 用户自定义提醒
 @property(nonatomic, assign) BOOL scheduleSettingUser;
 
+/// (id=59)
+/// Classic Bluetooth BT Control
+/// 功能与协议: 是否支持 经典蓝牙BT控制 (id=59)
+@property(nonatomic, assign) BOOL supportBtOps;
+
+/// (id=60)
+/// User-defined reply messages
+/// 功能与协议: 是否支持 用户自定义回复消息
+@property(nonatomic, assign) BOOL supportUserMsg;
+
+/// (id=32)
+/// support OvulationDay
+/// 功能与协议: 是否支持  经期排卵日
+@property(nonatomic, assign) BOOL supportOvulationDay;
+
+/// (id = 51)
+/// 功能与协议: 是否支持 压力监测 时间间隔
+@property(nonatomic, assign) BOOL stressMonitorInterval;
+
+/// (id = 34)
+/// 功能与协议: 消息推送开关支持最多128个字节（否则64个）
+@property(nonatomic, assign) BOOL appSwNum128Bytes;
+
+/// (id = 61)
+/// 功能与协议: 否支持 固件log的bin
+@property(nonatomic, assign) BOOL supportWatchLog;
 @end
 
 NS_ASSUME_NONNULL_END
