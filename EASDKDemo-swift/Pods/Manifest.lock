@@ -1,0 +1,50 @@
+PODS:
+  - BGFMDB (2.0.13):
+    - BGFMDB/BG (= 2.0.13)
+    - BGFMDB/FMDB (= 2.0.13)
+  - BGFMDB/BG (2.0.13):
+    - BGFMDB/FMDB
+  - BGFMDB/FMDB (2.0.13)
+  - EABluetooth (1.0.80.2):
+    - BGFMDB
+    - Protobuf
+    - SAMKeychain
+    - YYKit
+  - Protobuf (3.21.11)
+  - SAMKeychain (1.5.3)
+  - SnapKit (5.6.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - BGFMDB
+  - EABluetooth (from `../`)
+  - Protobuf
+  - SAMKeychain
+  - SnapKit
+  - YYKit
+
+SPEC REPOS:
+  trunk:
+    - BGFMDB
+    - Protobuf
+    - SAMKeychain
+    - SnapKit
+    - YYKit
+
+EXTERNAL SOURCES:
+  EABluetooth:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
+  EABluetooth: bafa2491f6781d4866d577cf5dca99bfdef25083
+  Protobuf: 3acb308a1e208605afd50866b98ec220141bcb8c
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: 17679a44c34a61ee18d139cfa239883f3f7ecbf5
+
+COCOAPODS: 1.11.3

@@ -1,0 +1,34 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '11.0'
+
+target 'EASDKDemo' do
+  # Comment the next line if you don't want to use dynamic frameworks
+ use_frameworks!
+
+# pod 'QMUIKit'
+  pod 'SnapKit'
+  
+  pod 'Protobuf'
+  pod 'YYKit'
+  pod 'SAMKeychain'
+  pod 'BGFMDB'
+	#pod 'EABluetooth', :git =>  'https://github.com/EastApex/EASDKTool_iOS.git'
+
+	pod 'EABluetooth', :path => '../'
+#	pod 'EABluetooth', :git =>  'https://github.com/EastApex/EASDKTool_iOS.git',:tag => '1.0.79.6'
+
+
+
+ # if Xcode version is 14.3 will open this
+
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+      end
+    end
+  end
+
+ # else ignore 
+  
+end

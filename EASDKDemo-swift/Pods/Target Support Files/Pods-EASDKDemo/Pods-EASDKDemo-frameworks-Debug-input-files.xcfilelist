@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-EASDKDemo/Pods-EASDKDemo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/BGFMDB/BGFMDB.framework
+${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework
+${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework
