@@ -25,12 +25,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)defaultManager;
 
 
-/// Get data 获取数据
+/// 【EA & SC】Get data 获取数据
 - (void)operationGetInfoWithType:(EADataInfoType)dataInfoType result:(ResultGetInfoBlock )result;
-/// Get data from class ’EARequestModel‘ 获取数据
+/// 【EA & SC】Get data from class ’EARequestModel‘ 获取数据
 - (void)operationGetInfoWithRequestModel:(EARequestModel *)requestModel result:(ResultGetInfoBlock )result;
 
-/// Set data 修改数据
+/// 【EA & SC】Set data 修改数据
 - (void)operationChangeModel:(EABaseModel *)changeModel respond:(RespondBlock )respond;
 
 /// App controlled watch App操控手表
@@ -42,13 +42,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSData *)getAudioDataData;
 
 
-/// upgrade [OTA]
+/// 【EA & SC】upgrade [OTA]
 - (BOOL)upgradeFiles:(NSArray<EAFileModel *> *)list;
 
-/// Watch face [OTA]
+/// 【EA & SC】Watch face [OTA]
 - (BOOL)upgradeWatchFaceFile:(EAFileModel *)watchFaceFile;
 
-/// AGPS OTA
+
 - (BOOL)upgrade:(EAOTA *)ota;
 
 
@@ -102,7 +102,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (EAWatchModel *)getConnectWatchModel;
 - (void)openCommunicationTimer;
 - (void)closeCommunicationTimer;
-
+- (BOOL)getOTAState;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -14,9 +14,9 @@
  https://www.showdoc.com.cn/2042713679210858/0
  
  Date：2023-08-24
- Version：1.0.83.1
+ Version：1.0.83.2
  
- 
+ 1.fixed custom watch face bug.
  
   */
 
@@ -168,7 +168,7 @@ typedef void(^UpdateValueBlock)(CBCharacteristic *characteristic,NSError *error)
 /// ignore：
 - (void)writeValue:(NSData *)Data forCharacteristic:(EACharacteristicType )characteristicType;
 
-
+- (BOOL)isScanning;
 
 
 @end
