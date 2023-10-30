@@ -33,13 +33,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 【EA & SC】Set data 修改数据
 - (void)operationChangeModel:(EABaseModel *)changeModel respond:(RespondBlock )respond;
 
-/// App controlled watch App操控手表
-- (void)operationControlledWatchWithType:(EADeviceOpsType)deviceOpsType result:(RespondBlock )respond;
-
-
-/// Retrieve audio data [Call this method to retrieve audio data only when notification 'recording completed' is received]
-/// 获取音频数据【通知收到 ‘录音完成’ 才能调用此方法获取录音数据】
-- (NSData *)getAudioDataData;
+/// 【SC】Change unit
+- (void)operationChangeDistanceUnitFormat:(SCPT_Format_Distance )unitFormat respond:(RespondBlock )respond;
+- (void)operationChangeTemperatureUnitFormat:(SCPT_Format_Temperature )unitFormat respond:(RespondBlock )respond;
+- (void)operationChangeWeatherUnitFormat:(SCPT_Format_Weather )unitFormat respond:(RespondBlock )respond;
 
 
 /// 【EA & SC】upgrade [OTA]
@@ -47,6 +44,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 【EA & SC】Watch face [OTA]
 - (BOOL)upgradeWatchFaceFile:(EAFileModel *)watchFaceFile;
+
+
+/// App controlled watch App操控手表
+- (void)operationControlledWatchWithType:(EADeviceOpsType)deviceOpsType result:(RespondBlock )respond;
+
+/// Retrieve audio data [Call this method to retrieve audio data only when notification 'recording completed' is received]
+/// 获取音频数据【通知收到 ‘录音完成’ 才能调用此方法获取录音数据】
+- (NSData *)getAudioDataData;
 
 
 - (BOOL)upgrade:(EAOTA *)ota;

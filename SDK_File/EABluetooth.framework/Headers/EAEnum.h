@@ -413,19 +413,32 @@ typedef NS_ENUM(NSUInteger, EADataInfoType) {
     
     
     
-    // SC watch 
+    // SC watch
+    /// SC Mac address
     EADataInfoTypeSCMacAddress = 10000,
+    /// SC Serial Number
     EADataInfoTypeSCSerialNumber = 10001,
+    /// SC FW Version
     EADataInfoTypeSCFWVersion = 10002,
+    /// SC Unit Format
     EADataInfoTypeSCUnitFormat = 10003,
+    /// SC Temperature Monitor
     EADataInfoTypeSCTemperatureMonitor = 10005,
+    /// SC Agps Info
     EADataInfoTypeSCAgpsInfo = 10006,
+    /// SC UserId
     EADataInfoTypeSCUserId = 10007,
+    /// SC Switches
     EADataInfoTypeSCSwitches = 10008,
+    /// SC HeartRate Monitor
     EADataInfoTypeSCHeartRateMonitor = 10009,
+    /// SC Sedentary Monitor
     EADataInfoTypeSCSedentaryMonitor = 10010,
+    /// SC Notification Switch
     EADataInfoTypeSCNotificationSwitch = 10012,
+    /// SC WatchFace List
     EADataInfoTypeSCWatchFaceList = 10013,
+    /// SC Watch Face
     EADataInfoTypeSCWatchFace = 10014,
 };
 

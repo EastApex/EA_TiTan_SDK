@@ -40,8 +40,8 @@ class GetBigDataViewController: UIViewController  , UITableViewDelegate, UITable
         
         let setList:NSArray = [
             "Check whether the agreement supports separate access to big data.(id:44 Cmd_WatchSupport.getData() ==> supportOnlyGetBigData)",
-            "id:29 \nGet all the big data【获取所有大数据】",
-            "id:49 \nGet big data separately by type【按类型单独获取大数据】"
+            "id:29 \n【EA & SC】Get all the big data【获取所有大数据】",
+            "id:49 \n【EA】Get big data separately by type【按类型单独获取大数据】"
         ]
         let setInfo = NSMutableDictionary.init()
         setInfo.setObject(setList, forKey: "list" as NSCopying)

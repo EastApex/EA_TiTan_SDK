@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         config.isTest = 0;// Test special (please set use in the debugging stage => 0: delete big data, 1: do not delete big data)
         
         
+        // need to set this
         let deviceHeadNames:NSArray = [
             "FT_38",
             "Smart A12",

@@ -1078,3 +1078,401 @@ class Cmd_VibrateIntensity {
         }
     }
 }
+
+/**
+ "id:10000 \n Mac Address",
+ "id:10001 \n SerialNumber",
+ "id:10002 \n FW Version",
+ "id:10003 \n UnitFormat",
+ "id:10005 \n Temperature Monitor",
+ "id:10006 \n Agps Info",
+ "id:10007 \n UserId",
+ "id:10008 \n Switches",
+ "id:10009 \n HeartRate Monitor",
+ "id:10010 \n Sedentary Monitor",
+ "id:10012 \n Notification Switch",
+ "id:10013 \n Face List",
+ "id:10014 \n Watch Face",
+ */
+
+class Cmd_MacAddress {
+    
+    class func getData(){
+        
+        EABleSendManager.default().operationGetInfo(with: .scMacAddress) { baseModel in
+            
+            if baseModel.isKind(of: EARespondModel.self) {
+                
+                print(baseModel.modelToJSONObject()!);
+            }
+            else
+            {
+                print("mac address is " + baseModel.value);
+            }
+        }
+    }
+}
+
+class Cmd_SerialNumber {
+    
+    class func getData(){
+        
+        EABleSendManager.default().operationGetInfo(with: .scSerialNumber) { baseModel in
+            
+            if baseModel.isKind(of: EARespondModel.self) {
+                
+                print(baseModel.modelToJSONObject()!);
+            }
+            else
+            {
+                print("Serial number is " + baseModel.value);
+            }
+        }
+    }
+}
+
+class Cmd_FWVersion{
+    
+    class func getData(){
+        
+        EABleSendManager.default().operationGetInfo(with: .scfwVersion) { baseModel in
+            
+            if baseModel.isKind(of: EARespondModel.self) {
+                
+                print(baseModel.modelToJSONObject()!);
+            }
+            else if baseModel.isKind(of: EASCModel.self) {
+                
+                let model = baseModel as! EASCModel;
+                let scVersion = model.scVersion
+                print(scVersion.modelToJSONObject()!);
+            }
+        }
+    }
+}
+
+class Cmd_UnitFormat{
+    
+    class func getData(){
+        
+        EABleSendManager.default().operationGetInfo(with: .scUnitFormat) { baseModel in
+            
+            if baseModel.isKind(of: EARespondModel.self) {
+                
+                print(baseModel.modelToJSONObject()!);
+            }
+            else if baseModel.isKind(of: EASCModel.self) {
+                
+                let model = baseModel as! EASCModel;
+                let scFormat = model.scFormat
+                print(scFormat.modelToJSONObject()!);
+            }
+        }
+    }
+    class func setData(){
+        
+        
+        EABleSendManager.default().operationChangeWeatherUnitFormat(.weatherCentigrade) { respondModel in
+            
+            if respondModel.isKind(of: EARespondModel.self) {
+                
+                if respondModel.eErrorCode == .success {
+                    
+                    print("Succ")
+                }else {
+                    
+                    print("Fail")
+                }
+            }
+        }
+        
+        EABleSendManager.default().operationChangeDistanceUnitFormat(.metric) { respondModel in
+            
+            if respondModel.isKind(of: EARespondModel.self) {
+                
+                if respondModel.eErrorCode == .success {
+                    
+                    print("Succ")
+                }else {
+                    
+                    print("Fail")
+                }
+            }
+        }
+        
+        
+        EABleSendManager.default().operationChangeTemperatureUnitFormat(.centigrade) { respondModel in
+            
+            if respondModel.isKind(of: EARespondModel.self) {
+                
+                if respondModel.eErrorCode == .success {
+                    
+                    print("Succ")
+                }else {
+                    
+                    print("Fail")
+                }
+            }
+        }
+    }
+}
+
+class Cmd_TemperatureMonitor{
+    
+    class func getData(){
+        
+        EABleSendManager.default().operationGetInfo(with: .scTemperatureMonitor) { baseModel in
+            
+            if baseModel.isKind(of: EARespondModel.self) {
+                
+                print(baseModel.modelToJSONObject()!);
+            }
+            else if baseModel.isKind(of: EASCModel.self) {
+                
+                let model = baseModel as! EASCModel;
+                let scBodyTemperatureMonitor = model.scBodyTemperatureMonitor
+                print(scBodyTemperatureMonitor.modelToJSONObject()!);
+            }
+        }
+    }
+    
+    class func setData(){
+        
+        let eascModel = EASCModel.init()
+        let scBodyTemperatureMonitor = SCPT_BodyTemperatureMonitor.init()
+        scBodyTemperatureMonitor.duration = 60;
+        scBodyTemperatureMonitor.lowThreshold = 35;
+        scBodyTemperatureMonitor.highThreshold = 37;
+        scBodyTemperatureMonitor.startTimestamp = 0;
+        scBodyTemperatureMonitor.endTimestamp = 24*60*60;
+        
+        eascModel.scBodyTemperatureMonitor = scBodyTemperatureMonitor;
+        Command.setData(model: eascModel);
+    }
+}
+
+class Cmd_AgpsInfo{
+    
+    class func getData(){
+        
+        EABleSendManager.default().operationGetInfo(with: .scAgpsInfo) { baseModel in
+            
+            if baseModel.isKind(of: EARespondModel.self) {
+                
+                print(baseModel.modelToJSONObject()!);
+            }
+            else if baseModel.isKind(of: EASCModel.self) {
+                
+                let model = baseModel as! EASCModel;
+                let scAgps = model.scAgps
+                print(scAgps.modelToJSONObject()!);
+            }
+        }
+    }
+}
+
+class Cmd_UserId{
+    
+    class func getData(){
+        
+        EABleSendManager.default().operationGetInfo(with: .scUserId) { baseModel in
+            
+            if baseModel.isKind(of: EARespondModel.self) {
+                
+                print(baseModel.modelToJSONObject()!);
+            }
+            else if baseModel.isKind(of: EASCModel.self) {
+                
+                let model = baseModel as! EASCModel;
+                let scAgps = model.scAgps
+                print(scAgps.modelToJSONObject()!);
+            }
+        }
+    }
+}
+
+class Cmd_Switches{
+    
+    class func getData(){
+        
+        EABleSendManager.default().operationGetInfo(with: .scSwitches) { baseModel in
+            
+            if baseModel.isKind(of: EARespondModel.self) {
+                
+                print(baseModel.modelToJSONObject()!);
+            }
+            else if baseModel.isKind(of: EASCModel.self) {
+                
+                let model = baseModel as! EASCModel;
+                let scSwitches = model.scSwitches
+                print(scSwitches.modelToJSONObject()!);
+            }
+        }
+    }
+    class func setData() {
+        
+        let eascModel = EASCModel.init()
+        let scSwitches = SCPT_Switches.init()
+        scSwitches.notification = .on;
+//            ....
+        
+        eascModel.scSwitches = scSwitches;
+        Command.setData(model: eascModel);
+    }
+}
+
+class Cmd_HeartRateMonitor{
+    
+    class func getData(){
+        
+        EABleSendManager.default().operationGetInfo(with: .scHeartRateMonitor) { baseModel in
+            
+            if baseModel.isKind(of: EARespondModel.self) {
+                
+                print(baseModel.modelToJSONObject()!);
+            }
+            else if baseModel.isKind(of: EASCModel.self) {
+                
+                let model = baseModel as! EASCModel;
+                let scHeartrateMonitor = model.scHeartrateMonitor
+                print(scHeartrateMonitor.modelToJSONObject()!);
+            }
+        }
+    }
+    class func setData() {
+        
+        let eascModel = EASCModel.init()
+        let scHeartrateMonitor = SCPT_HeartrateMonitor.init()
+        scHeartrateMonitor.duration = 60;
+//            ....
+        
+        eascModel.scHeartrateMonitor = scHeartrateMonitor;
+        Command.setData(model: eascModel);
+    }
+}
+
+class Cmd_SedentaryMonitor{
+    
+    class func getData(){
+        
+        EABleSendManager.default().operationGetInfo(with: .scSedentaryMonitor) { baseModel in
+            
+            if baseModel.isKind(of: EARespondModel.self) {
+                
+                print(baseModel.modelToJSONObject()!);
+            }
+            else if baseModel.isKind(of: EASCModel.self) {
+                
+                let model = baseModel as! EASCModel;
+                let scHeartrateMonitor = model.scHeartrateMonitor
+                print(scHeartrateMonitor.modelToJSONObject()!);
+            }
+        }
+    }
+    class func setData() {
+        
+        let eascModel = EASCModel.init()
+        let scSedentary = SCPT_Sedentary.init()
+        scSedentary.duration = 60;
+//            ....
+        
+        eascModel.scSedentaryMonitor = scSedentary;
+        Command.setData(model: eascModel);
+    }
+}
+
+class Cmd_NotificationSwitch{
+    
+    class func getData(){
+        
+        EABleSendManager.default().operationGetInfo(with: .scNotificationSwitch) { baseModel in
+            
+            if baseModel.isKind(of: EARespondModel.self) {
+                
+                print(baseModel.modelToJSONObject()!);
+            }
+            else if baseModel.isKind(of: EASCModel.self) {
+                
+                let model = baseModel as! EASCModel;
+                let scNotificationSwitches = model.scNotificationSwitches
+                print(scNotificationSwitches.modelToJSONObject()!);
+            }
+        }
+    }
+    class func setData() {
+        
+        
+        let no1 = SCPT_NotificationSwitches_Config.init()
+        no1.type = .whatsapp
+        no1.state = true
+        
+        let no2 = SCPT_NotificationSwitches_Config.init()
+        no2.type = .facebook
+        no2.state = true
+        
+//            ....
+        
+        let configsArray:NSMutableArray = [
+            no1,
+            no2,
+        ]
+        
+        let eascModel = EASCModel.init()
+        let scNotificationSwitches = SCPT_NotificationSwitches.init()
+        scNotificationSwitches.configsArray = configsArray;
+
+        
+        eascModel.scNotificationSwitches = scNotificationSwitches;
+        Command.setData(model: eascModel);
+    }
+}
+
+class Cmd_WatchFaceList{
+    
+    class func getData(){
+        
+        EABleSendManager.default().operationGetInfo(with: .scWatchFaceList) { baseModel in
+            
+            if baseModel.isKind(of: EARespondModel.self) {
+                
+                print(baseModel.modelToJSONObject()!);
+            }
+            else if baseModel.isKind(of: EASCModel.self) {
+                
+                let model = baseModel as! EASCModel;
+                let scWatchfaceList = model.scWatchfaceList
+                print(scWatchfaceList);
+            }
+        }
+    }
+}
+class Cmd_SCWatchFace{
+    
+    class func getData(){
+        
+        EABleSendManager.default().operationGetInfo(with: .scWatchFace) { baseModel in
+            
+            if baseModel.isKind(of: EARespondModel.self) {
+                
+                print(baseModel.modelToJSONObject()!);
+            }
+            else if baseModel.isKind(of: EASCModel.self) {
+                
+                let model = baseModel as! EASCModel;
+                let scWatchface = model.scWatchface
+                print(scWatchface.modelToJSONObject()!);
+            }
+        }
+    }
+    class func setData() {
+        
+        
+        let eascModel = EASCModel.init()
+        let scWatchface = SCPT_Watchface.init()
+        scWatchface.id_p = 1; // 
+//            ....
+        
+        eascModel.scWatchface = scWatchface;
+        Command.setData(model: eascModel);
+    }
+}

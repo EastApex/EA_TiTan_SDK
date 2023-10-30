@@ -42,12 +42,12 @@ class OTAViewController: UIViewController  , UITableViewDelegate, UITableViewDat
         dataSource = NSMutableArray.init();
         
         let setList:NSArray = [
-            "OTA",
-            "Online Watch Face",
-            "Custom Watch Face: Type 1 = number",
-            "Custom Watch Face: Type 2 = pointer",
-            "Custom Watch Face: Type 3 = number & color",
-            "Custom Watch Face: Type 4 = number & color",
+            "【EA & SC】OTA",
+            "【EA & SC】Online Watch Face",
+            "【EA】Custom Watch Face: Type 1 = number",
+            "【EA】Custom Watch Face: Type 2 = pointer",
+            "【EA】Custom Watch Face: Type 3 = number & color",
+            "【EA】Custom Watch Face: Type 4 = number & color",
         ]
         let setInfo = NSMutableDictionary.init()
         setInfo.setObject(setList, forKey: "list" as NSCopying)

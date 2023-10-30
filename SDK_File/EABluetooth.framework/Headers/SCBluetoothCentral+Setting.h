@@ -119,13 +119,15 @@ typedef NS_ENUM(NSInteger, SCReminderType) {
 
 /// 设置温度格式F/C
 /// @param temperature temperature description
-/// @param callback <#callback description#>
+/// @param callback callback description
 - (SCBluetoothTask *)setTemperatureWithFormat:(SCPT_Format_Temperature)temperature callback:(SCBCBoolCallback)callback;
 
 /// 设置天气格式F/C
 /// @param weather <#weather description#>
-/// @param callback <#callback description#>
+/// @param callback callback description
 - (SCBluetoothTask *)setWeatherWithFormat:(SCPT_Format_Weather)weather callback:(SCBCBoolCallback)callback;
+
+
 
 - (SCBluetoothTask *)setLanguageWithLanguageType:(SCPT_Language_Type)languageType callback:(SCBCBoolCallback)callback;
 
