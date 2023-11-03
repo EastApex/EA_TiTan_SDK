@@ -13,8 +13,8 @@
  SDK access documentation
  https://www.showdoc.com.cn/2042713679210858/0
  
- Date：2023-10-27
- Version：1.0.83.3
+ Date：2023-11-03
+ Version：1.0.83.4
  
  1.fixed sleep data bug.
 

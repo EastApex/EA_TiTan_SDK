@@ -10,8 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-/// id = 32: 表盘信息
-/// id = 32: Dial information（Watch Face information）
+/// id = 33: 表盘信息
+/// id = 33: Dial information（Watch Face information）
 @interface EADialPlateModel : EABaseModel
 
 /// watch face id, (0代表在线自定义表盘，1~n，内置表盘编号)

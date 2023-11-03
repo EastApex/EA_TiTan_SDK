@@ -552,7 +552,9 @@ typedef NS_ENUM(NSUInteger, EARespondCodeType) {
     
     ///  SC Watch not this commond
     EARespondCodeTypeSCNotCommond = 800,
-    
+
+    ///  SC Watch params error
+    EARespondCodeTypeSCParamsError = 801,
     
     EARespondCodeTypeRemindIdError = 901,
     

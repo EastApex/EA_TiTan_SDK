@@ -493,9 +493,10 @@ class Cmd_Reminder {
         /// Friday:Close
         /// Saturday:Close
         
-        let weekCycleBit = EADataValue.getWeekCycle(byWeekCycleBitString: "1011100")
-        let reminderModel = EAReminderModel.eaInitCycleReminder(with: .alarm, weekCycleBit: weekCycleBit, hour: 8, minute: 0, onOff: 1, snooze: 1, snoozeDuration: 10, remindActionType: .longVibration, content: "");
-        
+        let weekCycleBit = EADataValue.getWeekCycle(byWeekCycleBitString: "0111110")
+        let reminderModel = EAReminderModel.eaInitCycleReminder(with: .alarm, weekCycleBit: weekCycleBit, hour: 8, minute: 1, onOff: 1, snooze: 1, snoozeDuration: 10, remindActionType: .longVibration, content: "aaa");
+        let model1 = EAReminderOps.eaInitAddOne(with: reminderModel)
+        Command.setData(model: model1);
         
 //        let reminderModel = EAReminderModel.eaInitSingleReminder(with: .alarm, year: 2023, month: 2, day: 15, hour: 13, minute: 14, onOff: 1, snooze: 0, snoozeDuration: 10, remindActionType: .longVibration, content: "")
 //
@@ -1284,8 +1285,7 @@ class Cmd_UserId{
             else if baseModel.isKind(of: EASCModel.self) {
                 
                 let model = baseModel as! EASCModel;
-                let scAgps = model.scAgps
-                print(scAgps.modelToJSONObject()!);
+                print("UserId is " + model.value);
             }
         }
     }
@@ -1364,8 +1364,8 @@ class Cmd_SedentaryMonitor{
             else if baseModel.isKind(of: EASCModel.self) {
                 
                 let model = baseModel as! EASCModel;
-                let scHeartrateMonitor = model.scHeartrateMonitor
-                print(scHeartrateMonitor.modelToJSONObject()!);
+                let scSedentaryMonitor = model.scSedentaryMonitor
+                print(scSedentaryMonitor.modelToJSONObject()!);
             }
         }
     }

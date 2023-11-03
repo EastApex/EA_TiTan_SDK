@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let deviceHeadNames:NSArray = [
             "FT_38",
             "Smart A12",
+            "Titan_90149",
         ]
         
         //  open sc watch
