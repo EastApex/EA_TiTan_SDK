@@ -251,7 +251,7 @@ class ViewController: UIViewController, EABleManagerDelegate, UITableViewDataSou
             if (baseModel.isKind(of: EAWatchModel.self)) {
                 
                 // Determine whether the watch is bound: unbound -> execute the binding process
-                if (baseModel as! EAWatchModel).userId != userId {
+                if (baseModel as! EAWatchModel).userId != userId  || (baseModel as! EAWatchModel).userId == "" {
                     
                     // Determine whether the watch supports the user to determine the binding function:
                     // Support -> Set < bindWatch.ops = .normalBegin > Let the watch display the binding page
