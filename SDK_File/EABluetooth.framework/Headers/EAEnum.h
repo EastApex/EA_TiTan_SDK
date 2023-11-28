@@ -556,7 +556,6 @@ typedef NS_ENUM(NSUInteger, EARespondCodeType) {
     ///  SC Watch params error
     EARespondCodeTypeSCParamsError = 801,
     
-    ///  SC Watch params error
     EARespondCodeTypeRemindIdError = 901,
     
     /// The maximum number supported is exceeded
@@ -566,10 +565,6 @@ typedef NS_ENUM(NSUInteger, EARespondCodeType) {
     /// Time to repeat
     /// 时间重复
     EARespondCodeTypeTimeConflict = 903,
-    
-    ///  SC Watch params error
-    ///  Cycle repeat
-    EARespondCodeTypeCycleError = 904,
     
     /// 超时
     /// Time Out
@@ -1208,8 +1203,6 @@ typedef NS_ENUM(NSUInteger,EAReminderEventType) {
     /// User Customization
     /// 用户自定义
     EAReminderEventTypeUser = 6,
-    
-    
     
     /// support sc watch
     EAReminderEventTypeEat = 100,

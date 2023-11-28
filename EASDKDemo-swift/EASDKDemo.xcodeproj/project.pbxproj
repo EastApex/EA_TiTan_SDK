@@ -447,6 +447,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EASDKDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EASC_SDK_Demo;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "App需要您的蓝牙服务，用于连接蓝牙设备。";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "App需要您的蓝牙服务，用于连接蓝牙设备。";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -486,6 +487,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EASDKDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EASC_SDK_Demo;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "App需要您的蓝牙服务，用于连接蓝牙设备。";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "App需要您的蓝牙服务，用于连接蓝牙设备。";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

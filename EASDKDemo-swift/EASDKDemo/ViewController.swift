@@ -89,6 +89,7 @@ class ViewController: UIViewController, EABleManagerDelegate, UITableViewDataSou
     
     func loadWatchData(){
         
+        showView()
         setSyncTime()
         
         // After paired，can use the ANCS service、App push 、Muisc control
@@ -111,8 +112,9 @@ class ViewController: UIViewController, EABleManagerDelegate, UITableViewDataSou
         
         print("connectSucc")
         
-        bindingWatch("")
-        showView()
+        // SC Watch need set userid ,if userid is 0, it is a new watch or unbound state.
+        bindingWatch("10086")
+        
         
  
     }
@@ -137,7 +139,9 @@ class ViewController: UIViewController, EABleManagerDelegate, UITableViewDataSou
     @objc func blePoweredOff(){
         
         print("blePoweredOff")
-        listCtl.dismiss(animated: true);
+        if (listCtl != nil) {
+            listCtl.dismiss(animated: true);
+        }
     }
     
     
@@ -245,17 +249,17 @@ class ViewController: UIViewController, EABleManagerDelegate, UITableViewDataSou
          4. Bound: There is no need to call the binding method, and the watch data interaction can be carried out.
          */
         
-        
         EABleSendManager.default().operationGetInfo(with: EADataInfoType.watch) { baseModel in
             
             if (baseModel.isKind(of: EAWatchModel.self)) {
                 
+                let eaWatchModel = baseModel as! EAWatchModel;
                 // Determine whether the watch is bound: unbound -> execute the binding process
-                if (baseModel as! EAWatchModel).userId != userId  || (baseModel as! EAWatchModel).userId == "" {
+                if eaWatchModel.userId != userId  || eaWatchModel.userId == "" {
                     
                     // Determine whether the watch supports the user to determine the binding function:
                     // Support -> Set < bindWatch.ops = .normalBegin > Let the watch display the binding page
-                    if ((baseModel as! EAWatchModel).isWaitForBinding == 1) {
+                    if (eaWatchModel.isWaitForBinding == 1) {
                         
                         let bindWatch = EABingingOps()
                         bindWatch.ops = .normalBegin // To start the binding, the user needs to click on the watch to confirm it
@@ -286,6 +290,7 @@ class ViewController: UIViewController, EABleManagerDelegate, UITableViewDataSou
                         //Not supported -> < Set bindWatch.ops = .end > binding completed
                         let bindWatch = EABingingOps()
                         bindWatch.ops = .end //  Set EABindingOpsType. End to complete the binding
+                        bindWatch.userId = userId
                         EABleSendManager.default().operationChange(bindWatch) { respondModel in
                             
                             // Interactive data with the watch
