@@ -307,11 +307,13 @@ typedef NS_ENUM(NSUInteger, EADataInfoType) {
     /// EAReplayUserMessage、EAReplayUserMessageData
     EADataInfoTypeReplayUserMessage = 60,
     
-    
+
     /// id = 61
-    /// Watch Log
-    /// EAWatchLog
     EADataInfoTypeWatchLog = 61,
+    
+    /// id = 63
+    EADataInfoTypeWriteDevDebug = 63,
+    
     
     /// Operating Phone Commands
     /// 操作手机命令
@@ -401,9 +403,14 @@ typedef NS_ENUM(NSUInteger, EADataInfoType) {
     EADataInfoTypeSportHrData = 3013,
 
     
+
     /// Temperature Data
     EADataInfoTypeTemperatureData = 3699,
+
     
+    EADataInfoTypeDebugLogData = 3997,
+    EADataInfoTypeDebugGpsNmeaData = 3998,
+
     
     /// OTA命令
     EADataInfoTypeOTARequest = 9001,
@@ -556,6 +563,7 @@ typedef NS_ENUM(NSUInteger, EARespondCodeType) {
     ///  SC Watch params error
     EARespondCodeTypeSCParamsError = 801,
     
+    ///  SC Watch params error
     EARespondCodeTypeRemindIdError = 901,
     
     /// The maximum number supported is exceeded
@@ -565,6 +573,10 @@ typedef NS_ENUM(NSUInteger, EARespondCodeType) {
     /// Time to repeat
     /// 时间重复
     EARespondCodeTypeTimeConflict = 903,
+    
+    ///  SC Watch params error
+    ///  Cycle repeat
+    EARespondCodeTypeCycleError = 904,
     
     /// 超时
     /// Time Out
@@ -1203,6 +1215,8 @@ typedef NS_ENUM(NSUInteger,EAReminderEventType) {
     /// User Customization
     /// 用户自定义
     EAReminderEventTypeUser = 6,
+    
+    
     
     /// support sc watch
     EAReminderEventTypeEat = 100,
