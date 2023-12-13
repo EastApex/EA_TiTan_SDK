@@ -13,8 +13,8 @@
  SDK access documentation
  https://www.showdoc.com.cn/2042713679210858/0
 
- Date：2023-11-27
- Version：1.0.87.4
+ Date：2023-12-13
+ Version：1.0.87.5
 
  
  1.Fix menstruation-prone digital display issues【修复经期易孕期数字显示问题】
