@@ -14,10 +14,9 @@
  https://www.showdoc.com.cn/2042713679210858/0
 
  Date：2023-12-18
- Version：1.0.87.6
+ Version：1.0.87.7
 
- 
- 1.Fix menstruation-prone digital display issues【修复经期易孕期数字显示问题】
+
 
   */
 

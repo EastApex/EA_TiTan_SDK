@@ -138,7 +138,7 @@ typedef NS_ENUM(NSInteger, SCReminderType) {
 /// @param highThreshold 心率上限
 /// @param callback <#callback description#>
 - (SCBluetoothTask *)setHeartRateMonitorWithDuration:(NSInteger)duration lowThreshold:(NSInteger)lowThreshold highThreshold:(NSInteger)highThreshold callback:(SCBCBoolCallback)callback;
-
+- (SCBluetoothTask *)setHeartRateMonitorWith:(SCPT_HeartrateMonitor *)scHeartrateMonitor callback:(SCBCBoolCallback)callback;
 /// 设置stress监控
 /// @param state  开关状态
 /// @param callback <#callback description#>
@@ -177,7 +177,7 @@ typedef NS_ENUM(NSInteger, SCReminderType) {
 /// @param duration 时间间隔 单位分钟
 /// @param callback <#callback description#>
 - (SCBluetoothTask *)setTemperatureAlertWithDuration:(NSInteger)duration callback:(SCBCBoolCallback)callback;
-
+- (SCBluetoothTask *)setTemperatureAlertWith:(SCPT_BodyTemperatureMonitor *)scBodyTemperatureMonitor callback:(SCBCBoolCallback)callback;
 /// 设置目标
 /// @param goal <#goal description#>
 /// @param callback <#callback description#>

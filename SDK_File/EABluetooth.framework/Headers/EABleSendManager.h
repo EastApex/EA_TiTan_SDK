@@ -58,6 +58,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
+
+
+
+
+
 ///备注：2个获取大数据方法不能同时使用。需要等待手表发送完成大数据消息才会有数据【监听通知 kNTF_EAGetDeviceOpsPhoneMessage】,然后调用 getBigDataWithBigDataType: 获取相关大数据详细内容
 ///Note: The two methods of obtaining big data cannot be used at the same time.Data will not be available until the watch sends the big data message[Listening notification kNTF_EAGetDeviceOpsPhoneMessage],Then call getBigDataWithBigDataType: access to relevant data details
 
