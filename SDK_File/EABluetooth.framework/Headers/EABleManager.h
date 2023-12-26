@@ -13,10 +13,12 @@
  SDK access documentation
  https://www.showdoc.com.cn/2042713679210858/0
 
- Date：2023-12-18
- Version：1.0.87.7
-
-
+ Date：2023-12-22
+ Version：1.0.87.8
+ 
+ 1.Fix SDK data interstring bug【修复SDK数据互串的bug】
+ 2.【修改mtu为128】
+ 3.【适配杰里表盘】
 
   */
 
@@ -101,8 +103,13 @@ typedef void(^UpdateValueBlock)(CBCharacteristic *characteristic,NSError *error)
 /// The singleton
 /// 单例
 + (instancetype)defaultManager;
+- (void)setEASdkKey:(NSString *)eaKey;
+
+
+#pragma mark - Equipment related Methods 设备相关方法
 
 /// 【EA & SC】scan watch
+/// 扫描
 - (void)scanPeripherals;
 
 /// 【EA & SC】stop scan watch
