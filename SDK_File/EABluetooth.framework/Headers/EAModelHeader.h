@@ -115,6 +115,7 @@
 // OPQ
 #import <EABluetooth/OPQCommon.h>
 #import <EABluetooth/EASCModel.h>
+#import <EABluetooth/DialCustomModel.h>
 
 
 #endif /* EAModelHeader_h */

@@ -25,6 +25,15 @@
 		1386FC90299B8B720000BE56 /* Cmd_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386FC8F299B8B720000BE56 /* Cmd_Model.swift */; };
 		1386FC92299CB6A00000BE56 /* RemiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386FC91299CB6A00000BE56 /* RemiderViewController.swift */; };
 		138DDF3F28C1CA2B000D48F1 /* 001012_U6.1.bin in Resources */ = {isa = PBXBuildFile; fileRef = 138DDF3E28C1CA2B000D48F1 /* 001012_U6.1.bin */; };
+		138DEF922B6B936D00C77EDC /* face_cus_01_d.bin in Resources */ = {isa = PBXBuildFile; fileRef = 138DEF892B6B936D00C77EDC /* face_cus_01_d.bin */; };
+		138DEF932B6B936D00C77EDC /* watchface_timing_preview_01_bg_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 138DEF8A2B6B936D00C77EDC /* watchface_timing_preview_01_bg_white@3x.png */; };
+		138DEF942B6B936D00C77EDC /* custom_watchface_01_dark_preview.png in Resources */ = {isa = PBXBuildFile; fileRef = 138DEF8B2B6B936D00C77EDC /* custom_watchface_01_dark_preview.png */; };
+		138DEF952B6B936D00C77EDC /* custom_watchface_01_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 138DEF8C2B6B936D00C77EDC /* custom_watchface_01_light.png */; };
+		138DEF962B6B936D00C77EDC /* CustomWatchface.plist in Resources */ = {isa = PBXBuildFile; fileRef = 138DEF8D2B6B936D00C77EDC /* CustomWatchface.plist */; };
+		138DEF972B6B936D00C77EDC /* custom_watchface_01_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 138DEF8E2B6B936D00C77EDC /* custom_watchface_01_dark.png */; };
+		138DEF982B6B936D00C77EDC /* watchface_timing_preview_01_bg_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 138DEF8F2B6B936D00C77EDC /* watchface_timing_preview_01_bg_black.png */; };
+		138DEF992B6B936D00C77EDC /* custom_watchface_01_light_preview.png in Resources */ = {isa = PBXBuildFile; fileRef = 138DEF902B6B936D00C77EDC /* custom_watchface_01_light_preview.png */; };
+		138DEF9A2B6B936D00C77EDC /* face_cus_01_l.bin in Resources */ = {isa = PBXBuildFile; fileRef = 138DEF912B6B936D00C77EDC /* face_cus_01_l.bin */; };
 		4D32652883D68AE433F7F739 /* Pods_EASDKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7B7B216959EA38E55ABEBA /* Pods_EASDKDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +70,15 @@
 		1386FC8F299B8B720000BE56 /* Cmd_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cmd_Model.swift; sourceTree = "<group>"; };
 		1386FC91299CB6A00000BE56 /* RemiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemiderViewController.swift; sourceTree = "<group>"; };
 		138DDF3E28C1CA2B000D48F1 /* 001012_U6.1.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = 001012_U6.1.bin; sourceTree = "<group>"; };
+		138DEF892B6B936D00C77EDC /* face_cus_01_d.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = face_cus_01_d.bin; sourceTree = "<group>"; };
+		138DEF8A2B6B936D00C77EDC /* watchface_timing_preview_01_bg_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watchface_timing_preview_01_bg_white@3x.png"; sourceTree = "<group>"; };
+		138DEF8B2B6B936D00C77EDC /* custom_watchface_01_dark_preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = custom_watchface_01_dark_preview.png; sourceTree = "<group>"; };
+		138DEF8C2B6B936D00C77EDC /* custom_watchface_01_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = custom_watchface_01_light.png; sourceTree = "<group>"; };
+		138DEF8D2B6B936D00C77EDC /* CustomWatchface.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomWatchface.plist; sourceTree = "<group>"; };
+		138DEF8E2B6B936D00C77EDC /* custom_watchface_01_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = custom_watchface_01_dark.png; sourceTree = "<group>"; };
+		138DEF8F2B6B936D00C77EDC /* watchface_timing_preview_01_bg_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watchface_timing_preview_01_bg_black.png; sourceTree = "<group>"; };
+		138DEF902B6B936D00C77EDC /* custom_watchface_01_light_preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = custom_watchface_01_light_preview.png; sourceTree = "<group>"; };
+		138DEF912B6B936D00C77EDC /* face_cus_01_l.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = face_cus_01_l.bin; sourceTree = "<group>"; };
 		13EE2F742A4057BC0012B93C /* EASDKDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EASDKDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		7E7B7B216959EA38E55ABEBA /* Pods_EASDKDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EASDKDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E2E0464A7DB631C96C412E /* Pods-EASDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EASDKDemo.debug.xcconfig"; path = "Target Support Files/Pods-EASDKDemo/Pods-EASDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +132,7 @@
 				131C5F89299CD359006BBD53 /* MonitorReminderViewController.swift */,
 				1386FC83299B7E790000BE56 /* Command.swift */,
 				1386FC8F299B8B720000BE56 /* Cmd_Model.swift */,
+				138DEF882B6B936D00C77EDC /* SCResources */,
 				138DDF3E28C1CA2B000D48F1 /* 001012_U6.1.bin */,
 				13EE2F742A4057BC0012B93C /* EASDKDemo-Bridging-Header.h */,
 				137C4C21289B917500DD28DC /* Main.storyboard */,
@@ -122,6 +141,23 @@
 				137C4C29289B917700DD28DC /* Info.plist */,
 			);
 			path = EASDKDemo;
+			sourceTree = "<group>";
+		};
+		138DEF882B6B936D00C77EDC /* SCResources */ = {
+			isa = PBXGroup;
+			children = (
+				138DEF892B6B936D00C77EDC /* face_cus_01_d.bin */,
+				138DEF8A2B6B936D00C77EDC /* watchface_timing_preview_01_bg_white@3x.png */,
+				138DEF8B2B6B936D00C77EDC /* custom_watchface_01_dark_preview.png */,
+				138DEF8C2B6B936D00C77EDC /* custom_watchface_01_light.png */,
+				138DEF8D2B6B936D00C77EDC /* CustomWatchface.plist */,
+				138DEF8E2B6B936D00C77EDC /* custom_watchface_01_dark.png */,
+				138DEF8F2B6B936D00C77EDC /* watchface_timing_preview_01_bg_black.png */,
+				138DEF902B6B936D00C77EDC /* custom_watchface_01_light_preview.png */,
+				138DEF912B6B936D00C77EDC /* face_cus_01_l.bin */,
+			);
+			name = SCResources;
+			path = ../../SCResources;
 			sourceTree = "<group>";
 		};
 		A6F22B5041D9DD0F6F0F1EC7 /* Pods */ = {
@@ -205,9 +241,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				137C4C28289B917700DD28DC /* LaunchScreen.storyboard in Resources */,
+				138DEF942B6B936D00C77EDC /* custom_watchface_01_dark_preview.png in Resources */,
+				138DEF972B6B936D00C77EDC /* custom_watchface_01_dark.png in Resources */,
+				138DEF932B6B936D00C77EDC /* watchface_timing_preview_01_bg_white@3x.png in Resources */,
+				138DEF992B6B936D00C77EDC /* custom_watchface_01_light_preview.png in Resources */,
 				137C4C25289B917700DD28DC /* Assets.xcassets in Resources */,
+				138DEF9A2B6B936D00C77EDC /* face_cus_01_l.bin in Resources */,
 				137C4C23289B917500DD28DC /* Main.storyboard in Resources */,
+				138DEF982B6B936D00C77EDC /* watchface_timing_preview_01_bg_black.png in Resources */,
+				138DEF922B6B936D00C77EDC /* face_cus_01_d.bin in Resources */,
+				138DEF962B6B936D00C77EDC /* CustomWatchface.plist in Resources */,
 				138DDF3F28C1CA2B000D48F1 /* 001012_U6.1.bin in Resources */,
+				138DEF952B6B936D00C77EDC /* custom_watchface_01_light.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

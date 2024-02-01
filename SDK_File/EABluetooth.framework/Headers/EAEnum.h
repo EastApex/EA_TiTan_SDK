@@ -845,6 +845,9 @@ typedef NS_ENUM(NSUInteger,EALanguageType) {
     /// 印地语
     /// Hindi
     EALanguageTypeHindi = 27,
+    
+    /** 乌克兰语 */
+    EALanguageTypeUkrainian = 28,
 };
 
 

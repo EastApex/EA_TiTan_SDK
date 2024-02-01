@@ -48,6 +48,7 @@ class OTAViewController: UIViewController  , UITableViewDelegate, UITableViewDat
             "【EA】Custom Watch Face: Type 2 = pointer",
             "【EA】Custom Watch Face: Type 3 = number & color",
             "【EA】Custom Watch Face: Type 4 = number & color",
+            "【SC】Custom Watch Face",
         ]
         let setInfo = NSMutableDictionary.init()
         setInfo.setObject(setList, forKey: "list" as NSCopying)
@@ -169,6 +170,18 @@ class OTAViewController: UIViewController  , UITableViewDelegate, UITableViewDat
         };break
         case 5: do {
             let result:NSInteger = Command.customWatchFaceType4()
+            if result < 1 {
+                
+                alertView.dismiss(animated: true)
+            }
+        };break
+        case 6: do {
+            
+//        Remarks:
+//            1. All files in the [SCResources] folder must be added to the App project.
+            
+            
+            let result:NSInteger = Command.customSCWatchFace()
             if result < 1 {
                 
                 alertView.dismiss(animated: true)

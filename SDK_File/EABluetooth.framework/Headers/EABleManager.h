@@ -13,12 +13,9 @@
  SDK access documentation
  https://www.showdoc.com.cn/2042713679210858/0
 
- Date：2023-12-22
- Version：1.0.87.8
+ Date：2024-02-01
+ Version：1.0.87.9
  
- 1.Fix SDK data interstring bug【修复SDK数据互串的bug】
- 2.【修改mtu为128】
- 3.【适配杰里表盘】
 
   */
 
@@ -125,6 +122,9 @@ typedef void(^UpdateValueBlock)(CBCharacteristic *characteristic,NSError *error)
 - (void)connectToPeripheral:(EAPeripheralModel *)peripheralModel;
 
 
+/// reconnection（Need the uuidString of the watch）
+- (void)reConnectToPeripheralWithUUIDString:(NSString *)uuidString;
+
 /// 【EA & SC】Disconnect the watch. Restart the App, EASDK will not automatically connect to the watch.
 - (void)disconnectAndNotReConnectPeripheral;
 
@@ -151,9 +151,7 @@ typedef void(^UpdateValueBlock)(CBCharacteristic *characteristic,NSError *error)
 /// 重连设备（传手表的SN号或者mac address）
 - (void)reConnectToPeripheral:(NSString *)sn;
 
-/// reconnection（Need the uuidString of the watch）
-/// 重连设备（传手表的uuidString）
-- (void)reConnectToPeripheralWithUUIDString:(NSString *)uuidString;
+
 
 /// Cancel connection
 /// 取消连接（连接时可用）
@@ -182,6 +180,7 @@ typedef void(^UpdateValueBlock)(CBCharacteristic *characteristic,NSError *error)
 
 - (BOOL)isScanning;
 
+- (BOOL)checkKey;
 
 @end
 

@@ -93,7 +93,7 @@ class ViewController: UIViewController, EABleManagerDelegate, UITableViewDataSou
         setSyncTime()
         
         // After paired，can use the ANCS service、App push 、Muisc control
-        Cmd_DeviceOps.pairWatch()
+//        Cmd_DeviceOps.pairWatch()
     }
     
     func addNotification(){
@@ -160,7 +160,17 @@ class ViewController: UIViewController, EABleManagerDelegate, UITableViewDataSou
         EABleManager.default().getPeripheralModel();
     }
     
+    @objc func showlistView(){
+        
+        let listViewController = WatchViewController()
+        listCtl = UINavigationController(rootViewController: listViewController)
+        listCtl.modalPresentationStyle = .fullScreen
+        self.present(listCtl, animated: true, completion: nil)
+    }
+    
     func showView(){
+        
+        print("showView")
         
         alertView.dismiss(animated: true)
         
@@ -170,12 +180,7 @@ class ViewController: UIViewController, EABleManagerDelegate, UITableViewDataSou
         ids.removeAllObjects()
         
         
-        
-        let listViewController = WatchViewController()
-        listCtl = UINavigationController(rootViewController: listViewController)
-        listCtl.modalPresentationStyle = .fullScreen
-        self.present(listCtl, animated: true, completion: nil)
-        
+        self.perform(#selector(showlistView), with: nil, afterDelay: 0.5)
 
         
         /**
@@ -272,6 +277,7 @@ class ViewController: UIViewController, EABleManagerDelegate, UITableViewDataSou
                                 let bindWatch = EABingingOps()
                                 bindWatch.ops = .end //  Set EABindingOpsType. End to complete the binding
                                 bindWatch.userId = userId
+                                bindWatch.clearData = false;
                                 EABleSendManager.default().operationChange(bindWatch) { respondModel in
                                     
                                     // Interactive data with the watch
@@ -291,6 +297,7 @@ class ViewController: UIViewController, EABleManagerDelegate, UITableViewDataSou
                         let bindWatch = EABingingOps()
                         bindWatch.ops = .end //  Set EABindingOpsType. End to complete the binding
                         bindWatch.userId = userId
+                        bindWatch.clearData = false;
                         EABleSendManager.default().operationChange(bindWatch) { respondModel in
                             
                             // Interactive data with the watch

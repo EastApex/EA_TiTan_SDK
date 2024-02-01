@@ -56,9 +56,6 @@ NSString *logString = [NSString stringWithFormat:@""format,##__VA_ARGS__];\
 /// Enable command timeout response.  Defalut NO,
 @property (nonatomic, assign) BOOL openCmdTimeOut;
 
-/// 扫描所有设备 ，默认关闭
-@property (nonatomic, assign) BOOL canScanAllDevices;
-
 
 @property (nonatomic, assign) BOOL openSCWatch;
 
@@ -72,6 +69,14 @@ NSString *logString = [NSString stringWithFormat:@""format,##__VA_ARGS__];\
 @property (nonatomic, assign) BOOL tool;
 /// ignore：
 @property (nonatomic, assign) BOOL factory;
+
+
+/// ignore：
+/// 扫描所有设备 ，默认关闭
+@property (nonatomic, assign) BOOL canScanAllDevices;
+
+/// ignore：
+@property (nonatomic, assign) BOOL canSaveWatchFaceFile;
 
 
 /// 初始化默认配置,不是单例（debug:NO,scanchannel:8800,canScanAllDevices:NO,isTest:NO,saveLog:NO）

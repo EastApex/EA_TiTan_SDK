@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>watchfaces</key>
+	<array>
+		<dict>
+			<key>selected</key>
+			<true/>
+			<key>componetImgName</key>
+			<string>custom_watchface_01_light</string>
+			<key>previewImgName</key>
+			<string>custom_watchface_01_light_preview</string>
+			<key>defalutBgName</key>
+			<string>watchface_timing_preview_01_bg_black</string>
+			<key>binFileName</key>
+			<string>face_cus_01_l</string>
+			<key>customShowType</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>selected</key>
+			<false/>
+			<key>componetImgName</key>
+			<string>custom_watchface_01_dark</string>
+			<key>previewImgName</key>
+			<string>custom_watchface_01_dark_preview</string>
+			<key>defalutBgName</key>
+			<string>watchface_timing_preview_01_bg_white</string>
+			<key>binFileName</key>
+			<string>face_cus_01_d</string>
+			<key>customShowType</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

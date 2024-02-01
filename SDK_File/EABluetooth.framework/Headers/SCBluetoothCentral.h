@@ -226,6 +226,7 @@ typedef void(^SCBleTodoBlock)(void);
 
 @property(nonatomic, copy) NSString *toConnectDeviceName;
 @property(nonatomic, copy) NSString *toConnectDeviceMacMap;
+@property(nonatomic, copy) NSString *toConnectDeviceUUIDString;
 
 /**
  回调集合

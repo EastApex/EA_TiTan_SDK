@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <EABluetooth/EAEnum.h>
 #import "EACustomNumberWatchFaceModel.h"
+#import "DialCustomModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EAMakeWatchFaceManager : NSObject
@@ -48,6 +49,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 2.如果手表的数字表盘不想要sdk内置的数字表盘样式，那么你需要使用type4来设置字体、颜色和位置来满足你的需求。
 /// 3.你可能需要花费1~2天来完成这个事情。
 
+
+#pragma mark - SC_Watch_thumbnails【缩略图】
++ (UIImage *)eascGetThumbnailWithDialCustomModel:(DialCustomModel *)dialCustomModel;
+#pragma mark - SC_Watch face ota 【表盘OTA】
++ (NSInteger )eascOtaPointerWatchFaceWithDialCustomModel:(DialCustomModel *)dialCustomModel;
 
 #pragma mark - thumbnails【缩略图】
 
@@ -115,6 +121,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Type5：Advanced custom pointer watch face【高级自定义指针表盘】
 + (NSInteger )eaOtaPointerWatchFaceWithImage:(UIImage *)image list:(NSArray <EACustomPointerWatchFaceModel *>*)pointerList watchFaceId:(NSString *)watchFaceId;
+
+
+
+
+
 
 
 

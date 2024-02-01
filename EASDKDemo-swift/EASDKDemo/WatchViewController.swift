@@ -40,7 +40,7 @@ class WatchViewController: UIViewController , UITableViewDelegate, UITableViewDa
             "Get Value",
             "Set Value",
             "Get big data",
-            "", // OTA & Watch Face
+            "OTA & Watch Face", //
             "Control Watch",
             "Control phone",
             "Unstrap a Watch",
@@ -103,9 +103,9 @@ class WatchViewController: UIViewController , UITableViewDelegate, UITableViewDa
             self.navigationController?.pushViewController(rCtl, animated: true)
         };break
         case 3:   do {
-//            let rCtl = OTAViewController()
-//            rCtl.title = title
-//            self.navigationController?.pushViewController(rCtl, animated: true)
+            let rCtl = OTAViewController()
+            rCtl.title = title
+            self.navigationController?.pushViewController(rCtl, animated: true)
         };break
         case 4:   do {
             let rCtl = ControlWatchViewController()

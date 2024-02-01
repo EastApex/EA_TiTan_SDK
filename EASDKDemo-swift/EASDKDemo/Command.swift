@@ -295,6 +295,22 @@ class Command: NSObject {
         return result
     }
     
+    class func customSCWatchFace() -> NSInteger {
+        
+        
+        
+        
+        
+        let backgroundImage = UIImage.init(named: "picture390*390")
+        
+        let list = DialCustomModel.getCustomWatchfaces()
+        let dialCustomModel = list.first as! DialCustomModel
+        dialCustomModel.photo = backgroundImage!
+        let result = EAMakeWatchFaceManager.eascOtaPointerWatchFace(with: dialCustomModel)
+        return result
+    }
+    
+    
     class func getBgImage() -> UIImage {
         
         let eaWatchModel = EABleSendManager.default().getConnectWatchModel()
@@ -325,6 +341,15 @@ class Command: NSObject {
             switch eaWatchModel.height {
             case 466:
                 backgroundImage = UIImage.init(named: "picture466*466")!;
+                break;
+            default:
+                break;
+            }
+            break
+        case 390:
+            switch eaWatchModel.height {
+            case 390:
+                backgroundImage = UIImage.init(named: "picture390*390")!;
                 break;
             default:
                 break;
