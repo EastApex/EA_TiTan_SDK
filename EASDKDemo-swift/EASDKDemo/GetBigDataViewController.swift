@@ -53,6 +53,8 @@ class GetBigDataViewController: UIViewController  , UITableViewDelegate, UITable
     func addNotification() {
         
         NotificationCenter.default.addObserver(self, selector: #selector(operatingPhone), name: NSNotification.Name(kNTF_EAGetDeviceOpsPhoneMessage), object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(kNTF_EAGetDeviceOpsPhoneMessage), object: nil)
     }
     @objc func operatingPhone(_ no:NSNotification){
         
