@@ -139,6 +139,7 @@ typedef NS_ENUM(NSInteger, SCReminderType) {
 /// @param callback <#callback description#>
 - (SCBluetoothTask *)setHeartRateMonitorWithDuration:(NSInteger)duration lowThreshold:(NSInteger)lowThreshold highThreshold:(NSInteger)highThreshold callback:(SCBCBoolCallback)callback;
 - (SCBluetoothTask *)setHeartRateMonitorWith:(SCPT_HeartrateMonitor *)scHeartrateMonitor callback:(SCBCBoolCallback)callback;
+
 /// 设置stress监控
 /// @param state  开关状态
 /// @param callback <#callback description#>

@@ -37,6 +37,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)operationChangeDistanceUnitFormat:(SCPT_Format_Distance )unitFormat respond:(RespondBlock )respond;
 - (void)operationChangeTemperatureUnitFormat:(SCPT_Format_Temperature )unitFormat respond:(RespondBlock )respond;
 - (void)operationChangeWeatherUnitFormat:(SCPT_Format_Weather )unitFormat respond:(RespondBlock )respond;
+/// 【SC】Change Stress Monitor open
+- (void)operationChangeStressMonitorWithState:(BOOL)state respond:(RespondBlock )respond;
+
+
 
 
 /// 【EA & SC】upgrade [OTA]
