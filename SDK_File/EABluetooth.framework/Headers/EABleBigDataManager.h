@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <EABluetooth/EAEnum.h>
-
+#import <EABluetooth/SCBluetoothSDK.h>
 NS_ASSUME_NONNULL_BEGIN
 
 
@@ -48,6 +48,8 @@ typedef void(^ResultBlock)(EARespondCodeType eaRespondCodeType);
 /// 获取并处理睡眠数据(睡眠合并间隔：60分钟)
 - (NSArray *)eaGetProcessingSleepData:(NSInteger)mergeTime;
 
+
+- (void)eaGetSCWorkoutDetail:(NSInteger )sportId finishCallback:(void (^)(SCPT_WorkoutDetail *workoutDetail, NSError *error))finishCallback;
 
 
 
