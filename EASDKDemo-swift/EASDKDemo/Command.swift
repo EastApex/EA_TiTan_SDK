@@ -74,6 +74,8 @@ class Command: NSObject {
         
         let model = EAOnlyGetBigData.eaInit(withBigDataType: bigDataType)
         Command.setData(model: model)
+        
+        
     }
     
     class func OTA() -> Bool{

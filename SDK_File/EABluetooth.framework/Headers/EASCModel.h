@@ -35,6 +35,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) NSArray *scWatchfaceList;
 
 @property(nonatomic,strong) SCPT_Watchface *scWatchface;
+
+
++ (void)getWorkoutDetail:(uint32_t )sportId finishCallback:(void (^)(NSArray <SCPT_WorkoutDetail *>*workoutDetails, NSError *error))finishCallback;
+
 @end
 
 NS_ASSUME_NONNULL_END
