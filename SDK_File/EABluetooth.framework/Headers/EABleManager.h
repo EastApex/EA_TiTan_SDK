@@ -13,16 +13,6 @@
  SDK access documentation
  https://www.showdoc.com.cn/2042713679210858/0
 
- Date：2024-02-01
- Version：1.0.87.9
- 
- Date：2024-08-09
- Version：1.0.87.16
- fixed sport big data
- 
- Date：2024-09-06
- Version：1.0.87.17
- fixed sleep big data
   */
 
 #import <Foundation/Foundation.h>
