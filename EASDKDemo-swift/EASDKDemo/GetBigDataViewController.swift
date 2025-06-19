@@ -73,6 +73,7 @@ class GetBigDataViewController: UIViewController  , UITableViewDelegate, UITable
              
              */
             
+               
             
             // daliy step data
             let stepData = EABleBigDataManager.default().eaGetBigData(withBigDataType: .stepData);

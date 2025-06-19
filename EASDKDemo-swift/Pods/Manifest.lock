@@ -8,7 +8,7 @@ PODS:
   - CocoaLumberjack (3.8.0):
     - CocoaLumberjack/Core (= 3.8.0)
   - CocoaLumberjack/Core (3.8.0)
-  - EABluetooth (1.0.1):
+  - EABluetooth (1.0.87.20):
     - BGFMDB
     - LYLogger
     - Protobuf
@@ -44,13 +44,13 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
   CocoaLumberjack: 78abfb691154e2a9df8ded4350d504ee19d90732
-  EABluetooth: 8be493f056aa963e6c06013a4a5200ab1e9a88ec
+  EABluetooth: 7e5527e2114b9d8e36bea56040da494ab5dd00f4
   LYLogger: c58e9b56757fa00aac33b2a9cc207abffc99a693
   Protobuf: 3acb308a1e208605afd50866b98ec220141bcb8c
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 478b473dbdb862138767a85d2364abf512352e17
+PODFILE CHECKSUM: afb03d235bee0e4a255adb22b973c22fd42cca69
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.16.2
